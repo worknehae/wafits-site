@@ -1,0 +1,87 @@
+body, .wafits {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.wafits header {
+  background: #0a1f44;
+  padding: 10px 20px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.wafits .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wafits .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.wafits .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.wafits .nav-links li {
+  position: relative;
+}
+
+.wafits .nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+}
+
+.wafits .dropdown-content {
+  display: none;
+  position: absolute;
+  background: white;
+  color: black;
+  top: 35px;
+  left: 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  min-width: 180px;
+  z-index: 999;
+}
+
+.wafits .dropdown-content li {
+  padding: 10px;
+}
+
+.wafits .dropdown-content li a {
+  color: black;
+}
+
+.wafits .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.wafits section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.wafits section#about {
+  background: #f4f4f4;
+}
+
+.wafits .service {
+  margin-bottom: 30px;
+}
+
+.wafits footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
