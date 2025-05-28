@@ -41,30 +41,6 @@ body, .wafits {
   padding: 8px;
 }
 
-.wafits .dropdown-content {
-  display: none;
-  position: absolute;
-  background: white;
-  color: black;
-  top: 35px;
-  left: 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  min-width: 180px;
-  z-index: 999;
-}
-
-.wafits .dropdown-content li {
-  padding: 10px;
-}
-
-.wafits .dropdown-content li a {
-  color: black;
-}
-
-.wafits .dropdown:hover .dropdown-content {
-  display: block;
-}
-
 .wafits section {
   padding: 40px 20px;
   max-width: 900px;
@@ -77,6 +53,10 @@ body, .wafits {
 
 .wafits .service {
   margin-bottom: 30px;
+}
+
+.wafits .team-member {
+  margin-bottom: 20px;
 }
 
 .wafits footer {
