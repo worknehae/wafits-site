@@ -1,0 +1,230 @@
+Step-by-Step Guide to Host wafits.com on Vercel
+🧱 Step 1: Prepare Your Website Files
+Create a folder on your machine with this basic structure:
+
+pgsql
+Copy
+Edit
+wafits-website/
+├── index.html
+├── style.css
+└── script.js
+Example index.html:
+
+html
+Copy
+Edit
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wafits</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Welcome to Wafits!</h1>
+  <p>Your company's website is live.</p>
+  <script src="script.js"></script>
+</body>
+</html>
+🗃️ Step 2: Push Your Code to GitHub
+Create a new GitHub repository (e.g., wafits-site)
+
+On your local machine:
+
+bash
+Copy
+Edit
+cd wafits-website
+git init
+git remote add origin https://github.com/yourusername/wafits-site.git
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+
+----------------------------
+when runing git push -u origin master, got this error 
+remote: Repository not found.
+fatal: repository 'https://github.com/yourusername/wafits-site.git/' not found
+
+ChatGPT said:
+That error means Git can't find the repository URL you entered — most likely because either:
+
+The GitHub repository doesn't exist yet, or
+
+The yourusername part wasn't replaced with your actual GitHub username
+
+✅ Here's How to Fix It Step-by-Step:
+🔹 Step 1: Create the Repository on GitHub
+Go to https://github.com and log in
+
+Click “+” → “New repository”
+
+Name it: wafits-site
+
+Leave it public or private, your choice
+
+Do not initialize it with a README (you already have files locally)
+
+Click “Create repository”
+
+GitHub will show you something like:
+
+bash
+Copy
+Edit
+git remote add origin https://github.com/YOUR_USERNAME/wafits-site.git
+---------------------------------
+Step 3: Deploy on Vercel
+Go to https://vercel.com
+
+Sign in using your GitHub account
+
+Click "New Project" and import your wafits-site repo
+
+Project settings:
+
+Framework preset: None (since it's plain HTML/CSS/JS)
+
+Root directory: / (default)
+
+✅ Vercel will build and deploy automatically, giving you a live preview URL like https://wafits-site.vercel.app.
+
+🌐 Step 4: Connect Custom Domain wafits.com
+In your Vercel dashboard, go to your project > Settings > Domains
+
+Click "Add", and enter wafits.com
+
+Follow Vercel's instructions to update your domain's DNS records:
+
+Go to your domain registrar (e.g., GoDaddy, Namecheap, Google Domains)
+
+Add or edit a CNAME or A record:
+
+A Record pointing to Vercel IP: 76.76.21.21
+
+Or CNAME pointing to: cname.vercel-dns.com (depending on registrar)
+
+Once DNS propagates (can take a few minutes to hours), Vercel will show wafits.com as "verified"
+--------------------
+the "Name" field in your DNS record is crucial for connecting your domain (wafits.com) properly to Vercel.
+
+✅ If You’re Adding an A Record for Root Domain (wafits.com):
+Type: A
+
+Name: @
+
+Value: 76.76.21.21
+
+TTL: 30 minutes (or leave default)
+
+✅ This points your root domain wafits.com directly to Vercel’s IP.
+
+✅ If You’re Adding a CNAME Record for www.wafits.com:
+Type: CNAME
+
+Name: www
+
+Value: cname.vercel-dns.com
+
+TTL: 30 minutes (or leave default)
+
+✅ This sets up www.wafits.com to resolve to Vercel.
+
+👉 Recommended Setup (Both Records)
+Type	Name	Value
+A	@	76.76.21.21
+CNAME	www	cname.vercel-dns.com
+
+Then, in Vercel:
+
+Add both wafits.com and www.wafits.com under your project settings → Domains
+
+Vercel will automatically handle HTTPS (SSL)
+------------------------------------------
+🔐 Step 5: Enable HTTPS (Auto)
+Vercel will automatically provision an SSL certificate via Let's Encrypt for your domain after it's verified — you’ll get a secure https://wafits.com.
+
+🔄 Step 6: Update and Re-Deploy Anytime
+Just push to GitHub:
+
+bash
+Copy
+Edit
+git add .
+git commit -m "Update site content"
+git push
+Vercel will automatically re-deploy your site with changes.
+
+🧪 Optional Enhancements
+Add a favicon.ico and SEO meta tags
+
+Set up a contact form using Netlify Forms (via Netlify) or Formspree
+
+Use Google Analytics or Vercel Analytics
+
+Enable Vercel's Edge Middleware or Redirects
+
+-------------------------------------
+✅ Step-by-Step: Correct DNS Setup for Vercel
+👇 1. Go to Your Domain Registrar
+Log into wherever you registered wafits.com (e.g., GoDaddy, Namecheap, Google Domains).
+
+🧱 2. Set the Correct DNS Records
+For wafits.com (root domain)
+Field	Value
+Type	A
+Name	@
+Value	76.76.21.21
+TTL	Default or 30 min
+
+For www.wafits.com (subdomain)
+Field	Value
+Type	CNAME
+Name	www
+Value	cname.vercel-dns.com
+TTL	Default or 30 min
+
+⚠️ Important Notes
+Do not mix A and CNAME records for the same name (e.g., don’t add CNAME for @)
+
+Only one A record should exist for @ — remove others if present
+
+No conflicting records for www — remove any A record for www
+
+🔁 3. Wait for DNS Propagation
+It may take 5–30 minutes (sometimes up to a few hours) for DNS changes to take effect.
+
+✅ 4. Check Domain in Vercel
+Go to Vercel → Project → Settings → Domains
+
+You should see a green check once DNS is correct
+
+You can also click "Refresh" or "Retry" after DNS is set
+
+🔄 5. Optional: Redirect www to root (or vice versa)
+After validation, you can:
+
+Set wafits.com as the primary domain
+
+Enable redirect from www.wafits.com → wafits.com
+------------------------------
+🔄 Step 6: Update and Re-Deploy Anytime
+Just push to GitHub:
+
+bash
+Copy
+Edit
+git add .
+git commit -m "Update site content"
+git push
+Vercel will automatically re-deploy your site with changes.
+
+🧪 Optional Enhancements
+Add a favicon.ico and SEO meta tags
+
+Set up a contact form using Netlify Forms (via Netlify) or Formspree
+
+Use Google Analytics or Vercel Analytics
+
+Enable Vercel's Edge Middleware or Redirects
