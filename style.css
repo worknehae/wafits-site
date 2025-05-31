@@ -1,99 +1,107 @@
-/* Base styles */
+/* General reset */
 body {
-  font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f6f9;
   color: #333;
-  background: #f9f9f9;
 }
 .container {
-  width: 90%;
   max-width: 1100px;
-  margin: 0 auto;
+  margin: auto;
+  padding: 0 20px;
 }
 
-/* Header */
-header {
-  background: #003366;
+/* Header & Navigation */
+.site-header {
+  background-color: #003366;
+  padding: 15px 0;
   color: white;
-  padding: 20px 0;
-  text-align: center;
 }
-header nav a {
+.logo {
+  font-size: 1.8em;
+  margin: 0;
+}
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+.nav-links a {
   color: white;
-  margin: 0 15px;
   text-decoration: none;
 }
-header nav a:hover {
+.nav-links a:hover {
   text-decoration: underline;
 }
-
-/* Hero */
-.hero {
-  background: #005799;
+.nav-toggle {
+  display: none;
+  background: none;
+  font-size: 24px;
   color: white;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-/* Services */
-.services {
-  padding: 40px 0;
-}
-.service-boxes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-.service {
-  background: white;
-  border-radius: 8px;
-  padding: 20px;
-  flex: 1 1 45%;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* About */
-.about {
-  background: #e8f0fe;
-  padding: 40px 20px;
-}
-
-/* Contact */
-.contact form {
-  display: flex;
-  flex-direction: column;
-}
-.contact input, .contact textarea {
-  margin-bottom: 15px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-.contact button {
-  background: #003366;
-  color: white;
-  padding: 12px;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
 }
-.contact button:hover {
-  background: #005799;
+
+/* Banner */
+.banner {
+  background: linear-gradient(to right, #005799, #0078d4);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+.banner .btn-primary {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #005799;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.banner .btn-primary:hover {
+  background-color: #eee;
+}
+
+/* Details Page */
+.details-content {
+  background: white;
+  padding: 40px 20px;
+  margin: 30px auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.btn-secondary {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #0078d4;
 }
 
 /* Footer */
 footer {
-  background: #003366;
+  background-color: #003366;
   color: white;
   text-align: center;
-  padding: 15px 0;
+  padding: 20px 0;
   margin-top: 40px;
 }
 
-/* Responsive */
+/* Mobile Nav */
 @media (max-width: 768px) {
-  .service-boxes {
+  .nav-links {
     flex-direction: column;
+    background-color: #003366;
+    display: none;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .nav-toggle {
+    display: block;
   }
 }
