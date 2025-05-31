@@ -14,7 +14,14 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 
   formMessage.textContent = 'Thank you for your message. We will get back to you shortly!';
   formMessage.style.color = 'green';
-
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.querySelector('.nav-links');
+  
+  if (navToggle) {
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  }
   // Optionally reset form
   this.reset();
 });
