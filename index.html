@@ -3,80 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>WAFITS - Web Applications and Future IT Solutions</title>
+  <title>WAFITS - IT Solutions</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+  <!-- Header & Navigation -->
   <header class="site-header">
     <div class="container nav-wrapper">
-      <h1 class="logo">WAFITS</h1>
-      <nav id="main-nav">
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
+      <div class="logo">WAFITS</div>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="details.html">Details</a></li>
+          <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <button class="nav-toggle" id="navToggle">☰</button>
+        <button id="navToggle" class="nav-toggle">☰</button>
       </nav>
     </div>
   </header>
 
-  <section class="banner">
-    <div class="container">
-      <h2>Robust Digital Solutions for a Smarter Future</h2>
-      <p>Custom SharePoint, Drupal, .NET, and Microsoft 365 development</p>
-      <a href="#services" class="btn-primary">Explore Our Services</a>
+  <!-- Hero Banner -->
+  <section id="home" class="banner">
+    <div class="banner-overlay">
+      <div class="container banner-content">
+        <h1>Empowering Digital Innovation</h1>
+        <p>We build enterprise-grade solutions with SharePoint, Drupal, .NET, and Power Platform</p>
+        <a href="#services" class="btn-primary">Explore Services</a>
+      </div>
     </div>
   </section>
 
-  <section id="services" class="services container">
+  <!-- Services Section -->
+  <section id="services" class="container services">
     <h2>Our Services</h2>
-    <div class="service-boxes">
-      <div class="service">
+    <div class="service-grid">
+      <div class="service-card">
         <h3>SharePoint Solutions</h3>
-        <p>Custom development, site branding, migrations, workflows & enterprise content management.</p>
+        <p>Custom workflows, ECM, migrations, and branding using Microsoft 365 & Akumina.</p>
       </div>
-      <div class="service">
+      <div class="service-card">
         <h3>Drupal Development</h3>
-        <p>Custom module development, advanced theming, performance optimization & 508 compliance.</p>
+        <p>Drupal 9/10/11 modules, responsive theming, accessibility compliance, and optimization.</p>
       </div>
-      <div class="service">
-        <h3>.NET & API Development</h3>
-        <p>Robust .NET apps, REST APIs, third-party integrations & scalable architecture.</p>
+      <div class="service-card">
+        <h3>.NET & C# Apps</h3>
+        <p>Robust, scalable .NET MVC apps, REST APIs, and system integration for enterprise needs.</p>
       </div>
-      <div class="service">
+      <div class="service-card">
         <h3>Power Platform</h3>
-        <p>Power Apps, Power Automate & Power BI dashboards for data-driven decision-making.</p>
+        <p>Power Apps, Power Automate & Power BI dashboards that deliver real-time business insights.</p>
       </div>
     </div>
   </section>
 
+  <!-- About -->
   <section id="about" class="about container">
-    <h2>About Us</h2>
-    <p>WAFITS is led by a Microsoft Certified Developer with 8+ years of experience delivering cutting-edge solutions in SharePoint, Drupal, and Microsoft 365. We bring agile development, system integration, and innovation to government and enterprise environments.</p>
+    <h2>About WAFITS</h2>
+    <p>WAFITS (Web Applications and Future IT Solutions) is a technology consulting firm dedicated to delivering enterprise solutions using Microsoft, open-source, and cloud technologies. With certified developers and a proven track record, we help organizations digitally transform with confidence.</p>
   </section>
 
+  <!-- Contact -->
   <section id="contact" class="contact container">
     <h2>Contact Us</h2>
     <form id="contactForm">
-      <label for="name">Name</label>
-      <input type="text" id="name" required />
-
-      <label for="email">Email</label>
-      <input type="email" id="email" required />
-
-      <label for="message">Message</label>
-      <textarea id="message" rows="5" required></textarea>
-
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
       <p id="formMessage"></p>
     </form>
   </section>
 
-  <footer>
+  <!-- Footer -->
+  <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 WAFITS.com | All rights reserved</p>
+      <p>© 2025 WAFITS.com | Web Applications and Future IT Solutions</p>
+      <small>Built with ❤ by certified IT engineers</small>
     </div>
   </footer>
 
