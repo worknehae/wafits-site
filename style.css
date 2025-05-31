@@ -1,87 +1,99 @@
-body, .wafits {
-  font-family: Arial, sans-serif;
+/* Base styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
+  color: #333;
+  background: #f9f9f9;
+}
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.wafits header {
-  background: #0a1f44;
-  padding: 10px 20px;
+/* Header */
+header {
+  background: #003366;
   color: white;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  padding: 20px 0;
+  text-align: center;
+}
+header nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+header nav a:hover {
+  text-decoration: underline;
 }
 
-.wafits .navbar {
+/* Hero */
+.hero {
+  background: #005799;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Services */
+.services {
+  padding: 40px 0;
+}
+.service-boxes {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.wafits .logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.wafits .nav-links {
-  list-style: none;
-  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
-
-.wafits .nav-links li {
-  position: relative;
-}
-
-.wafits .nav-links a {
-  color: white;
-  text-decoration: none;
-  padding: 8px;
-}
-
-.wafits .dropdown-content {
-  display: none;
-  position: absolute;
+.service {
   background: white;
-  color: black;
-  top: 35px;
-  left: 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  min-width: 180px;
-  z-index: 999;
+  border-radius: 8px;
+  padding: 20px;
+  flex: 1 1 45%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.wafits .dropdown-content li {
-  padding: 10px;
-}
-
-.wafits .dropdown-content li a {
-  color: black;
-}
-
-.wafits .dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.wafits section {
+/* About */
+.about {
+  background: #e8f0fe;
   padding: 40px 20px;
-  max-width: 900px;
-  margin: auto;
 }
 
-.wafits section#about {
-  background: #f4f4f4;
+/* Contact */
+.contact form {
+  display: flex;
+  flex-direction: column;
+}
+.contact input, .contact textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.contact button {
+  background: #003366;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.contact button:hover {
+  background: #005799;
 }
 
-.wafits .service {
-  margin-bottom: 30px;
-}
-
-.wafits footer {
-  background: #222;
+/* Footer */
+footer {
+  background: #003366;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 15px 0;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .service-boxes {
+    flex-direction: column;
+  }
 }
