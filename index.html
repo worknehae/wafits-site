@@ -1,60 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WAFITS - Web Applications and Future IT Solutions</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
 <body>
-  <div class="wafits">
-    <header>
-      <nav class="navbar">
-        <div class="logo">WAFITS</div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li class="dropdown">
-            <a href="#services">Services</a>
-            <ul class="dropdown-content">
-              <li><a href="#cloud">Cloud Consulting</a></li>
-              <li><a href="#cybersecurity">Cybersecurity</a></li>
-              <li><a href="#devops">DevOps</a></li>
-              <li><a href="#ai">AI & Automation</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+  <header>
+    <div class="container">
+      <h1>WAFITS</h1>
+      <p>Web Applications and Future IT Solutions</p>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <section id="about">
-      <h1>About WAFITS</h1>
-      <p>WAFITS is a leading IT consulting company specializing in innovative digital transformation solutions for businesses of all sizes.</p>
-    </section>
+  <section class="hero">
+    <div class="container">
+      <h2>Empowering Digital Transformation</h2>
+      <p>Expert IT consulting in SharePoint, Drupal, Microsoft 365, .NET, and Power Platform</p>
+    </div>
+  </section>
 
-    <section id="services">
-      <h2>Our Services</h2>
-      <div class="service" id="cloud">
-        <h3>Cloud Consulting</h3>
-        <p>We help companies migrate, optimize, and scale in the cloud (AWS, Azure, GCP).</p>
+  <section id="services" class="services container">
+    <h2>Our Services</h2>
+    <div class="service-boxes">
+      <div class="service">
+        <h3>SharePoint Solutions</h3>
+        <p>Custom development, site branding, migrations, workflows & enterprise content management.</p>
       </div>
-      <div class="service" id="cybersecurity">
-        <h3>Cybersecurity</h3>
-        <p>Protect your infrastructure with our end-to-end security solutions and audits.</p>
+      <div class="service">
+        <h3>Drupal Development</h3>
+        <p>Custom module development, advanced theming, performance optimization & 508 compliance.</p>
       </div>
-      <div class="service" id="devops">
-        <h3>DevOps</h3>
-        <p>Streamline your CI/CD pipelines, infrastructure automation, and deployments.</p>
+      <div class="service">
+        <h3>.NET & API Development</h3>
+        <p>Robust .NET apps, REST APIs, third-party integrations & scalable architecture.</p>
       </div>
-      <div class="service" id="ai">
-        <h3>AI & Automation</h3>
-        <p>Boost efficiency with custom machine learning models and intelligent automation.</p>
+      <div class="service">
+        <h3>Power Platform</h3>
+        <p>Power Apps, Power Automate & Power BI dashboards for data-driven decision-making.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p>Email: info@wafits.com</p>
-      <p>Phone: +123 456 7890</p>
-      <p>Location: Addis Ababa, Ethiopia</p>
-    </section>
+  <section id="about" class="about container">
+    <h2>About Us</h2>
+    <p>WAFITS is led by a Microsoft Certified Developer with 8+ years of experience delivering cutting-edge solutions in SharePoint, Drupal, and Microsoft 365. We bring agile development, system integration, and innovation to government and enterprise environments.</p>
+  </section>
 
-    <footer>
-      <p>&copy; 2025 WAFITS. All rights reserved.</p>
-    </footer>
-  </div>
+  <section id="contact" class="contact container">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+      <p id="formMessage"></p>
+    </form>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 WAFITS.com | All rights reserved</p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
+</html>
