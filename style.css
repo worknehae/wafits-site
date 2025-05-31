@@ -124,19 +124,5 @@ header nav ul li a {
 #contact-form textarea {
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-#contact-form button {
-  background-color: #ff5722;
-  color: #fff;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-}
-#contact-form button:hover {
-  background-color: #e64a19
-::contentReference[oaicite:0]{index=0}
- 
+  border
+::contentReference[oaicite:13]{index=13}
